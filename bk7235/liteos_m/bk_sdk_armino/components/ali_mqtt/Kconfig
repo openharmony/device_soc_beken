@@ -1,7 +1,0 @@
-menu "Ali MQTT"
-
-	config ALI_MQTT
-		bool "Enable ALI_MQTT"
-		default y
-
-endmenu
