@@ -220,6 +220,7 @@ void at_wifi_state(char *pcWriteBuffer, int xWriteBufferLen, int argc, char **ar
 }
 void at_wifi_ping(char *pcWriteBuffer, int xWriteBufferLen, int argc, char **argv)
 {
+#if 0
 	char *msg = NULL;
 	int ret;
 	uint32_t cnt = 4;
@@ -241,6 +242,7 @@ void at_wifi_ping(char *pcWriteBuffer, int xWriteBufferLen, int argc, char **arg
 	else
 		msg = AT_CMD_RSP_ERROR;
 	os_memcpy(pcWriteBuffer, msg, os_strlen(msg));
+#endif
 }
 
 #endif
