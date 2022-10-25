@@ -1,0 +1,6 @@
+
+rsource "*/Kconfig.liteos_m.defconfig.series"
+
+#config HALS_COMMUCATION_WIFI_LITE
+#    bool "WIFI LITE"
+#    default y

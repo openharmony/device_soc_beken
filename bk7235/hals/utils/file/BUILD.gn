@@ -1,0 +1,13 @@
+import("//build/lite/config/component/lite_component.gni")
+import("${board_adapter_dir}/hals/sdk_dir.gni")
+
+static_library("hal_file_static") {
+  sources = [ "src/hal_file.c" ]
+  include_dirs = [
+    "//utils/native/lite/hals/file",
+
+    "${beken_sdk_dir}/components/easy_flash/inc",
+    "${beken_sdk_dir}/components/easy_flash/port",
+  ]
+  include_dirs += bk_hal_include_dirs
+}
