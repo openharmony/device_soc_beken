@@ -1,7 +1,7 @@
-# device_soc_beken
+# device_beken
 
 #### Description
-{**When you're done, you can delete the content in this README and update the file with details for others getting started with your repository**}
+device_beken
 
 #### Software Architecture
 Software architecture description

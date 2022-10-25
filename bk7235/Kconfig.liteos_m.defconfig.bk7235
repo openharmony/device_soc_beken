@@ -1,0 +1,5 @@
+
+config SOC
+    string
+    default "bk7235"
+    depends on SOC_BK7235

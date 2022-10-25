@@ -1,39 +1,58 @@
 # device_soc_beken
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+## 介绍
 
-#### 软件架构
-软件架构说明
+该仓库托管博通集成旗下soc芯片相关代码，包含hal模块、wifi配网、ble配网，以及各个模块等相关代码：
+
+## 目录框架
+
+```
+device/soc/beken
+├── bk7235									# BK7235芯片平台目录
+│  		├── liteos_m						# 基于liteos_m的适配目录
+│   	│   ├── components					# 组件服务层代码目录
+│   	│   └── bk_sdk_armino				# sdk模块的目录
+│   	└── hal
+│			├── communication				# wifi/ble适配层代码目录
+│   	    └── iot_hardware				# hardware的目录
+│			├── update						# hota的目录
+│   	    └── utils						# hal_file适配的目录
+│
+├── Kconfig.liteos_m.defconfig				# Kconfig配置
+├── Kconfig.liteos_m.series					# 系列soc配置宏
+└── Kconfig.liteos_m.soc					# soc kconfig配置宏
+```
+## 编译环境搭建
+*安装必要的库和工具
+	sudo apt-get install build-essential gcc g++ make zlib* libffi-dev e2fsprogs pkg-config flex bison perl bc openssl libssl-dev libelf-dev libc6-dev binutils binutils-dev libdwarf-dev u-boot-tools mtd-utils gcc-arm-linux-gnueabi cpio device-tree-compiler git git-lfs ruby ccache
+
+*安装python3
+	1.sudo apt-get install python3.8
+	2.安装pip3，更换下载源
+	sudo apt install python3-pip
+*安装hb
+	1.python3 -m pip install --user ohos-build
+	2.安装固定hb版本
+		pip3 install ohos-build==0.4.6
+*安装risc-v
+  1.解压risc-v.tar.bz2
+  2.设置环境变量export PATH=/opt/risc-v/nds32le-elf-mculib-v5/bin:$PATH
 
 
-#### 安装教程
+## 编译流程
+  1.选择芯片
+   hb set
+	使用键盘方向键进行板卡demo选择：
+	beken
+ 		> wifi_bk7235
+ 		> xts_test_part1
+ 	2.编译
+ 	  hb build -f
+ 	  
+ 	  
+## 烧录流程
+打开烧录工具，选择openharmony\device\board\beken\bk7235x\liteos_m\build\all_2M.1220.bin，选择串口点击烧录
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+## 相关仓
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+[beken_openharmony](http://gitlab.bekencorp.com/wifi/openharmony.git)
