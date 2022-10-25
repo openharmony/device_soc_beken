@@ -1,0 +1,36 @@
+# Copyright (C) 2022 BEKEN .
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import("//build/lite/ndk/ndk.gni")
+import("${board_adapter_dir}/hals/sdk_dir.gni")
+
+static_library("btservice") {
+  sources = [
+    "src/ohos_bt_hal.c",
+    "src/ble_test.c",
+  ]
+  include_dirs = [
+  ]
+  include_dirs = [
+    "${beken_sdk_dir}/components/bk_ble/ble_v5/include",
+  ]
+  include_dirs += bk_hal_include_dirs
+}
+
+if (ohos_kernel_type == "liteos_m") {
+  ndk_lib("bluetooth_ndk") {
+    deps = [ ":btservice" ]
+
+    head_files =
+        [ "//foundation/communication/bluetooth/interfaces/innerkits/native_c/include" ]
+  }
+}
