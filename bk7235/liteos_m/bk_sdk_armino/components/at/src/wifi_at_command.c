@@ -294,6 +294,7 @@ error:
 }
 int at_wifi_ping_cmd(char *pcWriteBuffer, int xWriteBufferLen, int argc, char **argv)
 {
+#if 0
 	char *msg = NULL;
 	int err = kNoErr;
 	uint32_t cnt = 4;
@@ -328,5 +329,8 @@ error:
 	msg = AT_CMD_RSP_ERROR;
 	os_memcpy(pcWriteBuffer, msg, os_strlen(msg));
 	return err;
+#else
+	return 0;
+#endif
 }
 #endif
