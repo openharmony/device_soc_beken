@@ -119,7 +119,7 @@ void arp_Command(char *pcWriteBuffer, int xWriteBufferLen, int argc, char **argv
 
 void cli_ping_cmd(char *pcWriteBuffer, int xWriteBufferLen, int argc, char **argv)
 {
-#if CONFIG_LWIP
+#if 0 //CONFIG_LWIP
 	uint32_t cnt = 4;
 	if (argc == 1) {
 		os_printf("Please input: ping <host address>\n");

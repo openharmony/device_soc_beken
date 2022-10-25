@@ -21,7 +21,7 @@ if (CONFIG_LWIP_V2_1)
 	lwip-2.1.2/port/net.c
 	lwip-2.1.2/port/sys_arch.c
 	lwip-2.1.2/port/sockets.c
-	lwip-2.1.2/port/ping.c
+	#lwip-2.1.2/port/ping.c
 	${lwip_dir}/src/api/api_lib.c
 	${lwip_dir}/src/api/api_msg.c
 	${lwip_dir}/src/api/err.c
