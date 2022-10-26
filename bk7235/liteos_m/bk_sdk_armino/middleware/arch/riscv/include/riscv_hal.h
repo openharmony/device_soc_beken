@@ -21,8 +21,10 @@
 #define RISCV_PLIC_VECTOR_CNT   (63)
 #define RISCV_SYS_MAX_IRQ          (0)
 
+#ifndef MTIMER
 #define MTIMER                                 (0xE6000000)
 #define MTIMERCMP                          (0xE6000008)
+#endif
 
 #define HalIrqDisable(irq_no) 	clear_csr(NDS_MIE, (1<<irq_no))
 #define HalIrqEnable(irq_no)        set_csr(NDS_MIE, (1<<irq_no))

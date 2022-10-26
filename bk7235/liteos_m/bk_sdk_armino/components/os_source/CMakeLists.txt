@@ -235,34 +235,35 @@ elseif(CONFIG_LITEOS_M_MST)
 	if(CONFIG_ARCH_RISCV)
 		set(bounds_dir "../../../../../../../../third_party/bounds_checking_function")
 		#set(bounds_dir "liteos_m_mst/components/bounds_checking_function")
+		set(kernel_dir "../../../../../../../../kernel/liteos_m")
 		set(incs
-			liteos_m_mst/config/
-			liteos_m_mst/components/exchook
-			liteos_m_mst/components/cpup
-			liteos_m_mst/components/power
+			${kernel_dir}/config/
+			${kernel_dir}/components/exchook
+			${kernel_dir}/components/cpup
+			${kernel_dir}/components/power
 			${bounds_dir}/include/
-			liteos_m_mst/components/backtrace/
-			liteos_m_mst/kernel/include/
-			liteos_m_mst/arch/include/
-			liteos_m_mst/targets/bk72xx/
-			liteos_m_mst/utils/
-			liteos_m_mst/arch/risc-v/riscv32/gcc/
-			liteos_m_mst/arch/risc-v/riscv32/gcc/asm
+			${kernel_dir}/components/backtrace/
+			${kernel_dir}/kernel/include/
+			${kernel_dir}/arch/include/
+			${kernel_dir}/targets/bk72xx/
+			${kernel_dir}/utils/
+			${kernel_dir}/arch/risc-v/riscv32/gcc/
+			${kernel_dir}/arch/risc-v/riscv32/gcc/asm
 		)
 
 		set(srcs
-			liteos_m_mst/kernel/src/mm/los_membox.c
-			liteos_m_mst/kernel/src/mm/los_memory.c
-			liteos_m_mst/kernel/src/los_event.c
-			liteos_m_mst/kernel/src/los_init.c
-			liteos_m_mst/kernel/src/los_mux.c
-			liteos_m_mst/kernel/src/los_queue.c
-			liteos_m_mst/kernel/src/los_sem.c
-			liteos_m_mst/kernel/src/los_swtmr.c
-			liteos_m_mst/kernel/src/los_task.c
-			liteos_m_mst/kernel/src/los_tick.c
-			liteos_m_mst/kernel/src/los_sched.c
-			liteos_m_mst/kernel/src/los_sortlink.c
+			${kernel_dir}/kernel/src/mm/los_membox.c
+			${kernel_dir}/kernel/src/mm/los_memory.c
+			${kernel_dir}/kernel/src/los_event.c
+			${kernel_dir}/kernel/src/los_init.c
+			${kernel_dir}/kernel/src/los_mux.c
+			${kernel_dir}/kernel/src/los_queue.c
+			${kernel_dir}/kernel/src/los_sem.c
+			${kernel_dir}/kernel/src/los_swtmr.c
+			${kernel_dir}/kernel/src/los_task.c
+			${kernel_dir}/kernel/src/los_tick.c
+			${kernel_dir}/kernel/src/los_sched.c
+			${kernel_dir}/kernel/src/los_sortlink.c
 			${bounds_dir}/src/fscanf_s.c
 			${bounds_dir}/src/fwscanf_s.c
 			${bounds_dir}/src/gets_s.c
@@ -302,17 +303,18 @@ elseif(CONFIG_LITEOS_M_MST)
 			${bounds_dir}/src/wmemcpy_s.c
 			${bounds_dir}/src/wmemmove_s.c
 			${bounds_dir}/src/wscanf_s.c
-			liteos_m_mst/components/power/los_pm.c
-			liteos_m_mst/components/exchook/los_exc_info.c
-			liteos_m_mst/utils/los_error.c
-			liteos_m_mst/utils/los_debug.c
-			liteos_m_mst/components/backtrace/los_backtrace.c
-			liteos_m_mst/arch/risc-v/riscv32/gcc/los_context.c
-			liteos_m_mst/arch/risc-v/riscv32/gcc/los_interrupt.c
-			# liteos_m_mst/arch/risc-v/riscv32/gcc/los_timer.c
-			liteos_m_mst/targets/bk72xx/bk_los_timer.c
-			liteos_m_mst/arch/risc-v/riscv32/gcc/los_dispatch.S
-			liteos_m_mst/arch/risc-v/riscv32/gcc/los_exc.S
+			${kernel_dir}/components/power/los_pm.c
+			${kernel_dir}/components/exchook/los_exc_info.c
+			${kernel_dir}/utils/los_error.c
+			${kernel_dir}/utils/los_debug.c
+			${kernel_dir}/components/backtrace/los_backtrace.c
+			${kernel_dir}/arch/risc-v/riscv32/gcc/los_context.c
+			${kernel_dir}/arch/risc-v/riscv32/gcc/los_interrupt.c
+			# ${kernel_dir}/arch/risc-v/riscv32/gcc/los_timer.c
+			#${kernel_dir}/targets/bk72xx/bk_los_timer.c
+			${kernel_dir}/arch/risc-v/riscv32/gcc/los_timer.c
+			${kernel_dir}/arch/risc-v/riscv32/gcc/los_dispatch.S
+			${kernel_dir}/arch/risc-v/riscv32/gcc/los_exc.S
 		)
 	endif()
 endif()
