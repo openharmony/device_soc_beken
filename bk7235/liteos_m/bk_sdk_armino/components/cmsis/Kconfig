@@ -1,3 +1,0 @@
-config CMSIS
-	bool "Enable CMSIS"
-	default n

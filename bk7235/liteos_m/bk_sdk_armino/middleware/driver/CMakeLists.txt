@@ -441,6 +441,6 @@ endif()
 
 armino_component_register(SRCS "${srcs}"
 	INCLUDE_DIRS "${incs}"
-	REQUIRES arm9 riscv cm33
+	REQUIRES riscv
 	PRIV_REQUIRES bk_log bk_ate
 )
