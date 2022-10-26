@@ -9,7 +9,7 @@
 #include "los_memory.h"
 #include "los_interrupt.h"
 #include "los_swtmr.h"
-#include "bk_los_timer.h"
+#include "los_timer.h"
 #include "portmacro.h"
 
 /* OS_TASK_PRIORITY_HIGHEST and OS_TASK_PRIORITY_LOWEST is reserved for internal TIMER and IDLE task use only. */

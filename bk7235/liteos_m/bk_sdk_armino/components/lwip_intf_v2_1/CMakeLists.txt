@@ -3,6 +3,8 @@ set(srcs)
 
 if(CONFIG_HARMONY_LWIP)
 	set(lwip_dir "../../../../../../../../third_party/lwip")
+	set(liteos_dir "../../../../../../../../kernel/liteos_m")
+	set(extra_dir "../../../../../../../../device/soc/beken/bk7235/liteos_m")
 else()
 	set(lwip_dir "lwip-2.1.2")
 endif()
@@ -14,6 +16,16 @@ if (CONFIG_LWIP_V2_1)
 	${lwip_dir}/src/include
 	${lwip_dir}/src/include/netif
 	${lwip_dir}/src/include/lwip
+	${liteos_dir}/arch/risc-v/riscv32/gcc 
+	${liteos_dir}/arch/risc-v/riscv32/gcc/asm 
+	${liteos_dir}/arch/include 
+	${liteos_dir}/kernel/include
+	${liteos_dir}/kal/cmsis
+	${liteos_dir}/kal/posix/include 
+	${liteos_dir}/components/power 
+	${liteos_dir}/components/signal 
+	${liteos_dir}/utils 
+	${extra_dir}/inc 
 	)
 
 	list(APPEND srcs

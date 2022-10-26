@@ -1,13 +1,14 @@
 #include <common/bk_include.h>
 #include "portmacro.h"
-#include "bk_los_timer.h"
+//#include "los_timer.h"
 #include "bk_timer.h"
 #include "los_reg.h"
-#include "los_debug.h"
-#include "los_timer.h"
+//#include "los_debug.h"
+//#include "los_timer.h"
 #include "riscv_hal.h"
-#include "soc_common.h"
-#include "los_config.h"
+#undef REGBYTES
+//#include "soc_common.h"
+//#include "los_config.h"
 #include "los_context.h"
 #include <os/os.h>
 #include "bk_arch.h"
@@ -80,7 +81,7 @@ void vPortSetupMEXTInterrupt(void)
 	ret = ArchHwiCreate(RISCV_MACH_EXT_IRQ, OS_HWI_PRIO_LOWEST, 0, (HWI_PROC_FUNC)mext_interrupt, 0);
 	LOS_IntRestore(int_save);
 	if (LOS_OK != ret) {
-		PRINT_ERR("Setup MEXT Interrupt failed!\n");
+		//PRINT_ERR("Setup MEXT Interrupt failed!\n");
 		return;
 	}
 
