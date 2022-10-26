@@ -233,12 +233,14 @@ elseif(CONFIG_LITEOS_M_V3)
 	endif()
 elseif(CONFIG_LITEOS_M_MST)
 	if(CONFIG_ARCH_RISCV)
+		set(bounds_dir "../../../../../../../../third_party/bounds_checking_function")
+		#set(bounds_dir "liteos_m_mst/components/bounds_checking_function")
 		set(incs
 			liteos_m_mst/config/
 			liteos_m_mst/components/exchook
 			liteos_m_mst/components/cpup
 			liteos_m_mst/components/power
-			liteos_m_mst/components/bounds_checking_function/include/
+			${bounds_dir}/include/
 			liteos_m_mst/components/backtrace/
 			liteos_m_mst/kernel/include/
 			liteos_m_mst/arch/include/
@@ -247,6 +249,7 @@ elseif(CONFIG_LITEOS_M_MST)
 			liteos_m_mst/arch/risc-v/riscv32/gcc/
 			liteos_m_mst/arch/risc-v/riscv32/gcc/asm
 		)
+
 		set(srcs
 			liteos_m_mst/kernel/src/mm/los_membox.c
 			liteos_m_mst/kernel/src/mm/los_memory.c
@@ -260,45 +263,45 @@ elseif(CONFIG_LITEOS_M_MST)
 			liteos_m_mst/kernel/src/los_tick.c
 			liteos_m_mst/kernel/src/los_sched.c
 			liteos_m_mst/kernel/src/los_sortlink.c
-			liteos_m_mst/components/bounds_checking_function/src/fscanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/fwscanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/gets_s.c
-			liteos_m_mst/components/bounds_checking_function/src/memcpy_s.c
-			liteos_m_mst/components/bounds_checking_function/src/memmove_s.c
-			liteos_m_mst/components/bounds_checking_function/src/memset_s.c
-			liteos_m_mst/components/bounds_checking_function/src/scanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/securecutil.c
-			liteos_m_mst/components/bounds_checking_function/src/secureinput_a.c
-			liteos_m_mst/components/bounds_checking_function/src/secureinput_w.c
-			liteos_m_mst/components/bounds_checking_function/src/secureprintoutput_a.c
-			liteos_m_mst/components/bounds_checking_function/src/secureprintoutput_w.c
-			liteos_m_mst/components/bounds_checking_function/src/snprintf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/sprintf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/sscanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/strcat_s.c
-			liteos_m_mst/components/bounds_checking_function/src/strcpy_s.c
-			liteos_m_mst/components/bounds_checking_function/src/strncat_s.c
-			liteos_m_mst/components/bounds_checking_function/src/strncpy_s.c
-			liteos_m_mst/components/bounds_checking_function/src/strtok_s.c
-			liteos_m_mst/components/bounds_checking_function/src/swprintf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/swscanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/vfscanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/vfwscanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/vscanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/vsnprintf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/vsprintf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/vsscanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/vswprintf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/vswscanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/vwscanf_s.c
-			liteos_m_mst/components/bounds_checking_function/src/wcscat_s.c
-			liteos_m_mst/components/bounds_checking_function/src/wcscpy_s.c
-			liteos_m_mst/components/bounds_checking_function/src/wcsncat_s.c
-			liteos_m_mst/components/bounds_checking_function/src/wcsncpy_s.c
-			liteos_m_mst/components/bounds_checking_function/src/wcstok_s.c
-			liteos_m_mst/components/bounds_checking_function/src/wmemcpy_s.c
-			liteos_m_mst/components/bounds_checking_function/src/wmemmove_s.c
-			liteos_m_mst/components/bounds_checking_function/src/wscanf_s.c
+			${bounds_dir}/src/fscanf_s.c
+			${bounds_dir}/src/fwscanf_s.c
+			${bounds_dir}/src/gets_s.c
+			${bounds_dir}/src/memcpy_s.c
+			${bounds_dir}/src/memmove_s.c
+			${bounds_dir}/src/memset_s.c
+			${bounds_dir}/src/scanf_s.c
+			${bounds_dir}/src/securecutil.c
+			${bounds_dir}/src/secureinput_a.c
+			${bounds_dir}/src/secureinput_w.c
+			${bounds_dir}/src/secureprintoutput_a.c
+			${bounds_dir}/src/secureprintoutput_w.c
+			${bounds_dir}/src/snprintf_s.c
+			${bounds_dir}/src/sprintf_s.c
+			${bounds_dir}/src/sscanf_s.c
+			${bounds_dir}/src/strcat_s.c
+			${bounds_dir}/src/strcpy_s.c
+			${bounds_dir}/src/strncat_s.c
+			${bounds_dir}/src/strncpy_s.c
+			${bounds_dir}/src/strtok_s.c
+			${bounds_dir}/src/swprintf_s.c
+			${bounds_dir}/src/swscanf_s.c
+			${bounds_dir}/src/vfscanf_s.c
+			${bounds_dir}/src/vfwscanf_s.c
+			${bounds_dir}/src/vscanf_s.c
+			${bounds_dir}/src/vsnprintf_s.c
+			${bounds_dir}/src/vsprintf_s.c
+			${bounds_dir}/src/vsscanf_s.c
+			${bounds_dir}/src/vswprintf_s.c
+			${bounds_dir}/src/vswscanf_s.c
+			${bounds_dir}/src/vwscanf_s.c
+			${bounds_dir}/src/wcscat_s.c
+			${bounds_dir}/src/wcscpy_s.c
+			${bounds_dir}/src/wcsncat_s.c
+			${bounds_dir}/src/wcsncpy_s.c
+			${bounds_dir}/src/wcstok_s.c
+			${bounds_dir}/src/wmemcpy_s.c
+			${bounds_dir}/src/wmemmove_s.c
+			${bounds_dir}/src/wscanf_s.c
 			liteos_m_mst/components/power/los_pm.c
 			liteos_m_mst/components/exchook/los_exc_info.c
 			liteos_m_mst/utils/los_error.c
