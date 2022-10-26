@@ -17,7 +17,7 @@
 #include "bk_wdt.h"
 #include <components/system.h>
 #include <os/os.h>
-#include "bk_los_timer.h"
+#include "los_timer.h"
 #include "los_tick.h"
 
 extern void HalTickHandler(u8 param);
