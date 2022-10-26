@@ -90,7 +90,9 @@
 # define LWU      		lw
 # define LOG_REGBYTES		2
 #endif
+#ifndef REGBYTES
 #define REGBYTES		(1 << LOG_REGBYTES)
+#endif
 
 #if __riscv_flen == 64
 # define FPSTORE		fsd
