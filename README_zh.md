@@ -55,4 +55,5 @@ device/soc/beken
 
 ## 相关仓
 
-[beken_openharmony](http://gitlab.bekencorp.com/wifi/openharmony.git)
+ [device/soc/beken](https://gitee.com/openharmony/device_soc_beken)
+ [device/board/beken](https://gitee.com/openharmony/device_board_beken)

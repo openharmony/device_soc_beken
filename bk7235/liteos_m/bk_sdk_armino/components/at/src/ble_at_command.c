@@ -223,7 +223,7 @@ const at_command_t ble_at_cmd_table[] = {
     {22, "SETTXTESTPARAM", 0, "set tx test param: <data_len> <interv>", ble_tx_test_param_handle},
     {23, "SETTXTESTENABLE", 0, "enable tx test: <1|0>", ble_tx_test_enable_handle},
     {24, "UPDATEMTU2MAX", 1, "update mtu 2 max: <addr>", ble_update_mtu_2_max_handle},
-    {25, "BOARDING", 0, "boarding", ble_boarding_handle},
+    //{25, "BOARDING", 0, "boarding", ble_boarding_handle},
     {26, "ENABLEPERFORMANCESTATISTIC", 1, "enable performance statistic, <tx|rx> <1|0>",
         ble_enable_performance_statistic_handle},
     {27, "SETMAXMTU", 0, "set att maximal mtu", ble_set_max_mtu_handle},

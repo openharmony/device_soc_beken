@@ -17,5 +17,5 @@ if (CONFIG_AT_CMD)
 	endif()
 endif()
 
-armino_component_register(SRCS "${srcs}" INCLUDE_DIRS "${incs}" REQUIRES bk_ble bk_bt bk_common bk_log video PRIV_REQUIRES bk_ble)
-#ali_mqtt
+armino_component_register(SRCS "${srcs}" INCLUDE_DIRS "${incs}" REQUIRES bk_ble bk_bt bk_common bk_log PRIV_REQUIRES bk_ble)
+#ali_mqtt video
