@@ -296,9 +296,9 @@ endif()
 
 armino_component_register(SRCS "${srcs}"
 	INCLUDE_DIRS "${incs}"
-	REQUIRES utf8 temp_detect driver user_driver bk_system fatfs user_driver
+	REQUIRES utf8 temp_detect driver user_driver bk_system user_driver
 	#PRIV_REQUIRES airkiss bk_common bk_netif bk_ble bk_ps http adc_key app iperf media_common
-	PRIV_REQUIRES bk_common bk_netif bk_ble bk_ps fatfs bk_init at bk_wifi compal media bk_bt
+	PRIV_REQUIRES bk_common bk_netif bk_ble bk_ps bk_init at bk_wifi compal media bk_bt
 	)
 
 if(CONFIG_ARCH_RISCV)
