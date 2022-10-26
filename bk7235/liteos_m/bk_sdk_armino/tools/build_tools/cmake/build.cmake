@@ -225,7 +225,7 @@ function(__build_init armino_path)
     __component_add(${armino_path}/include ${prefix})
 
     # Set components required by all other components in the build
-    set(requires_common include bk_log bk_event driver bk_rtos common)
+    set(requires_common include bk_log bk_event driver bk_os common)
     armino_build_set_property(__COMPONENT_REQUIRES_COMMON "${requires_common}")
 
     armino_build_set_property(COMPILE_DEFINITIONS "-DAPP_VERSION=\"$ENV{APP_VERSION}\"" APPEND)

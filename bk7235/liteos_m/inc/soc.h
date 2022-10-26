@@ -10,8 +10,10 @@
 
 #define RISCV_PLIC_VECTOR_CNT   (63)
 #define RISCV_SYS_MAX_IRQ          (0)
-
+#ifndef MTIMER
 #define MTIMER		0xE6000000
+#endif
+#ifndef MTIMERCMP
 #define MTIMERCMP	0xE6000008
-
+#endif
 #endif
