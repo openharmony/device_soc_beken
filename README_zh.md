@@ -64,8 +64,7 @@ device_soc_beken/
 ```
 	beken
  		> wifi_bk7235
- 		> xts_test_part1
-		> xts_test_part2
+ 		> xts_demo
 ```
 正常启动选wifi_bk7235,xts测试选择xts_test_part1和xts_test_part2
 
