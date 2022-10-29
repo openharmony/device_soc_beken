@@ -1,15 +1,8 @@
 # device_soc_beken
 
--	[介绍](#介绍)
--	[目录框架](#目录框架)
--	[编译环境搭建](#编译环境搭建)
--	[编译流程](#编译流程)
--	[烧录流程](#烧录流程)
--	[相关仓](#相关仓)
-
 ## 介绍
 
-该仓库托管博通集成旗下soc芯片相关代码，包含hal模块、wifi配网、ble配网，以及各个模块等相关代码：
+该仓库托管博通集成旗下SoC芯片相关代码。包含HAL模块、WiFi配网、BLE配网，以及各个模块等相关代码：
 
 ## 目录框架
 
@@ -82,12 +75,46 @@ device_soc_beken/
 2. 编译
 	
 ```
- 	  hb build -f
+ 	hb build -f
+```
+编译成功界面：
+```
+ 	[OHOS INFO] c targets overlap rate statistics
+	[OHOS INFO] subsystem           files NO.       percentage      builds NO.      percentage      overlap rate
+	[OHOS INFO] commonlibrary              3        0.6%           3        0.6%    1.00
+	[OHOS INFO] hdf                       54        11.5%         54        11.5%   1.00
+	[OHOS INFO] hiviewdfx                 12        2.5%          12        2.5%    1.00
+	[OHOS INFO] kernel                    32        6.8%          32        6.8%    1.00
+	[OHOS INFO] securec                   39        8.3%          39        8.3%    1.00
+	[OHOS INFO] security                  54        11.5%         54        11.5%   1.00
+	[OHOS INFO] startup                    6        1.3%           6        1.3%    1.00
+	[OHOS INFO] systemabilitymgr          15        3.2%          15        3.2%    1.00
+	[OHOS INFO] test                      60        12.7%         60        12.7%   1.00
+	[OHOS INFO] third_party              215        45.6%        215        45.6%   1.00
+	[OHOS INFO] thirdparty               215        45.6%        215        45.6%   1.00
+	[OHOS INFO] updater                    4        0.8%           4        0.8%    1.00
+	[OHOS INFO] xts                       60        12.7%         60        12.7%   1.00
+	[OHOS INFO] 
+	[OHOS INFO] c overall build overlap rate: 1.00
+	[OHOS INFO] 
+	[OHOS INFO] 
+	[OHOS INFO] xts_demo build success
+	[OHOS INFO] cost time: 0:00:57
 ```
 
 ## 烧录流程
-打开烧录工具，选择openharmony\device\board\beken\bk7235x\liteos_m\build\all_2M.1220.bin，选择串口点击烧录
-开发板重新上电
+
+-
+	打开烧录工具
+-
+	选择openharmony\device\board\beken\bk7235x\liteos_m\build\all_2M.1220.bin
+-
+	选择串口
+-
+	点击烧录
+-
+	开发板重新上电
+
 
 ## 相关仓
 
