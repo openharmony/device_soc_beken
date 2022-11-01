@@ -2,25 +2,32 @@
 
 ## 介绍
 
-该仓库托管博通集成旗下SoC芯片相关代码。包含HAL模块、WiFi配网、BLE配网，以及各个模块等相关代码：
+该仓库托管博通集成旗下SoC芯片BK7235相关代码。包含HAL模块、WiFi配网、BLE配网，以及各个模块的相关代码。
+
+| 芯片    | 能力介绍			|   
+| -------------- | -------------|
+| BK7235	| [WiFi数据传输](http://www.bekencorp.com/index/goods/detail/cid/40.html)|
 
 ## 目录框架
 
 ```
 device_soc_beken/
 ├── bk7235									# BK7235芯片平台目录
-│  		├── liteos_m						# 基于liteos_m的适配目录
-│   	│   ├── components					# 组件服务层代码目录
-│   	│   └── bk_sdk_armino				# sdk模块的目录
-│   	└── hal
-│			├── communication				# wifi/ble适配层代码目录
-│   	    └── iot_hardware				# hardware的目录
-│			├── update						# hota的目录
-│   	    └── utils						# hal_file适配的目录
-│
-├── Kconfig.liteos_m.defconfig				# Kconfig配置
-├── Kconfig.liteos_m.series					# 系列soc配置宏
-└── Kconfig.liteos_m.soc					# soc kconfig配置宏
+│   ├── BUILD.gn							# GN构建脚本
+│   ├── hals								# 代码适配目录
+│   ├── Kconfig.liteos_m.defconfig.bk7235	# BK7235 Kconfig默认配置
+│   ├── Kconfig.liteos_m.defconfig.series	# Series Kconfig默认配置
+│   ├── Kconfig.liteos_m.series				# Series Kconfig配置项
+│   ├── Kconfig.liteos_m.soc				# SoC Kconfig配置项
+│   └── liteos_m							# 基于LiteOS-M的适配目录
+├── BUILD.gn								# GN构建脚本
+├── EULA									# 最终用户许可协议
+├── Kconfig.liteos_m.defconfig				# Kconfig默认配置
+├── Kconfig.liteos_m.series					# Series配置项
+├── Kconfig.liteos_m.soc					# Series配置项
+├── LICENSE									# 证书文件
+├── OAT.xml									# 开源仓审查规则配置文件
+└── README_zh.md							# 中文README文件
 ```
 
 ## 编译环境搭建
@@ -55,7 +62,6 @@ device_soc_beken/
 	export PATH=/opt/risc-v/nds32le-elf-mculib-v5/bin:$PATH
 ```
 
-
 ## 编译流程
 
 1. 选择芯片
@@ -70,7 +76,7 @@ device_soc_beken/
  		> wifi_bk7235
  		> xts_demo
 ```
-正常启动选wifi_bk7235,xts测试选择xts_demo
+正常启动选wifi_bk7235，XTS测试选择xts_demo
 
 2. 编译
 	
@@ -105,15 +111,15 @@ device_soc_beken/
 ## 烧录流程
 
 -
-	打开烧录工具
+	打开烧录工具[BEKEN_WRITER_V1.6.38](http://dl.bekencorp.com/tools/flash/)。
 -
-	选择openharmony\device\board\beken\bk7235x\liteos_m\build\all_2M.1220.bin
+	烧录文件选择openharmony\device\board\beken\bk7235x\liteos_m\build\all_2M.1220.bin。
 -
-	选择串口
+	选择串口，点击烧录。
 -
-	点击烧录
+	等待出现“下载成功”字样。
 -
-	开发板重新上电
+	开发板重新上电。
 
 
 ## 相关仓
