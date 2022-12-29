@@ -1,0 +1,67 @@
+# Copyright (C) 2022 Beken Corporation
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+import("${beken_sdk_dir}/sdkconfig.gni")
+
+if (ohos_kernel_type == "liteos_m") {
+  import("//kernel/liteos_m/liteos.gni")
+  module_name = get_path_info(rebase_path("."), "name")
+  config("board_config") {
+    ldflags = [
+      "-std=c99",
+      "-mstrict-align",
+      "-Wl,--gc-sections",
+      "-ffunction-sections",
+      "-fdata-sections",
+      "-D__LITEOS__",
+      "-DCFG_SUPPORT_LITEOS",
+      "-DBEKEN_PLATFORM",
+      "-Wno-strict-prototypes",
+      "-Wno-parentheses",
+    ]
+
+    include_dirs = [
+      ".",
+      "include",
+    ]
+  }
+
+  module_group(module_name) {
+    modules = []
+    deps = [
+      "components/base64",
+      "components/bk_adapter",
+      "components/bk_ate",
+      "components/bk_cli",
+      "components/bk_event",
+      "components/bk_init",
+      "components/bk_log",
+      "components/bk_netif",
+      "components/bk_os:bk_os",
+      "components/bk_ps:bk_ps",
+      "components/bk_startup",
+      "components/bk_system",
+      "components/easy_flash",
+      "components/media",
+      "components/saradc_intf",
+      "components/security",
+      "components/temp_detect",
+      "components/utf8:utf8",
+      "middleware/arch:arch",
+      "middleware/boards:boards",
+      "middleware/driver:driver",
+      "middleware/soc:soc",
+      "projects",
+    ]
+  }
+}

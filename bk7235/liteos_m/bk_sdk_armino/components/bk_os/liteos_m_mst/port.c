@@ -35,6 +35,7 @@
 #include "los_arch_timer.h"
 #include "los_sched.h"
 
+#include "platform.h"
 
 #define ISR_STACK_SIZE 1024
 #define BYTE_ALIGNMENT_MASK    ( 0x000f )

@@ -8,7 +8,7 @@ if (NOT CONFIG_SLAVE_CORE)
 		comm/comm_act.c
 		comm/frame_buffer.c
 		app/media_app.c
-		utils/mlist.c
+		#utils/mlist.c
 	)
 
 if (CONFIG_CAMERA OR CONFIG_USB_UVC)

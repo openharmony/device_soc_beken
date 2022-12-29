@@ -15,14 +15,11 @@ import("${board_adapter_dir}/hals/sdk_dir.gni")
 
 static_library("btservice") {
   sources = [
-    "src/ohos_bt_hal.c",
     "src/ble_test.c",
+    "src/ohos_bt_hal.c",
   ]
-  include_dirs = [
-  ]
-  include_dirs = [
-    "${beken_sdk_dir}/components/bk_ble/ble_v5/include",
-  ]
+  include_dirs = []
+  include_dirs = [ "${beken_sdk_dir}/components/bk_ble/ble_v5/include" ]
   include_dirs += bk_hal_include_dirs
 }
 
@@ -30,7 +27,6 @@ if (ohos_kernel_type == "liteos_m") {
   ndk_lib("bluetooth_ndk") {
     deps = [ ":btservice" ]
 
-    head_files =
-        [ "//foundation/communication/bluetooth/interfaces/innerkits/native_c/include" ]
+    head_files = [ "//foundation/communication/bluetooth/interfaces/innerkits/native_c/include" ]
   }
 }

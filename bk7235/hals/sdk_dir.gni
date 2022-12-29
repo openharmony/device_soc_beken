@@ -1,19 +1,17 @@
 declare_args() {
   bk_hal_include_dirs = [
-      "//base/iothardware/peripheral/interfaces/inner_api",
-      "//foundation/communication/wifi_lite/interfaces/wifiservice",
-      "//foundation/communication/bluetooth/interfaces/inner_api/include/c_header",
-      "//foundation/systemabilitymgr/samgr_lite/interfaces/kits/samgr",
-      "//commonlibrary/utils_lite/include",
-      "//commonlibrary/utils_lite/hals/file",
+    "//base/iothardware/peripheral/interfaces/inner_api",
+    "//foundation/communication/wifi_lite/interfaces/wifiservice",
+    "//foundation/communication/bluetooth/interfaces/inner_api/include/c_header",
+    "//foundation/systemabilitymgr/samgr_lite/interfaces/kits/samgr",
+    "//commonlibrary/utils_lite/include",
+    "//commonlibrary/utils_lite/hals/file",
 
-      "${beken_sdk_dir}/build/openharmony/${beken_chip_type}/armino_as_lib/include",
-      "${beken_sdk_dir}/build/openharmony/${beken_chip_type}/armino_as_lib/include/modules",
-      "${beken_sdk_dir}/build/openharmony/${beken_chip_type}/armino_as_lib/include/driver",
-      "${beken_sdk_dir}/build/openharmony/${beken_chip_type}/armino_as_lib/include/arch/compiler",
-      "${beken_sdk_dir}/build/openharmony/${beken_chip_type}/armino_as_lib/include/extra",
-      "${beken_sdk_dir}/build/openharmony/${beken_chip_type}/armino_as_lib/${beken_chip_type}/config",
-      "${beken_sdk_dir}/middleware/arch/riscv/include",
-      "${beken_sdk_dir}/components/bk_rtos/liteos_m_mst",
+    "${beken_sdk_dir}",
+    "${beken_sdk_dir}/include",
+    "${beken_sdk_dir}/include/driver",
+    "${beken_sdk_dir}/include/extra",
+    "${beken_sdk_dir}/middleware/arch/riscv/include",
+    "${beken_sdk_dir}/components/bk_rtos/liteos_m_mst",
   ]
 }
