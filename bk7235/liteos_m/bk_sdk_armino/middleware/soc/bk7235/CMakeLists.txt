@@ -45,7 +45,7 @@ list(APPEND srcs
 	"hal/fft_hal_debug.c"
 	"hal/i2s_hal_debug.c"
 	"hal/flash_hal_debug.c"
-	"hal/flash_ll.c"
+	#"hal/flash_ll.c"
 	"hal/jpeg_dec_hal.c"
 )
 

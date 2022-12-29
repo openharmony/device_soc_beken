@@ -15,8 +15,6 @@ import("${board_adapter_dir}/hals/sdk_dir.gni")
 
 static_library("hal_wifiaware") {
   sources = [ "source/hal_wifiaware.c" ]
-  include_dirs = [
-    "//foundation/communication/wifi_aware/interfaces/kits",
-  ]
+  include_dirs = [ "//foundation/communication/wifi_aware/interfaces/kits" ]
   include_dirs += bk_hal_include_dirs
 }

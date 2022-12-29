@@ -32,7 +32,7 @@ extern "C" {
  * Device Specific Peripheral Registers structures
  ****************************************************************************/
 
-#define __I                     volatile const	/* 'read only' permissions      */
+#define __I                     volatile const    /* 'read only' permissions      */
 #define __O                     volatile        /* 'write only' permissions     */
 #define __IO                    volatile        /* 'read / write' permissions   */
 
@@ -48,23 +48,23 @@ extern "C" {
  * PLMT
  ****************************************************************************/
 typedef struct {
-	__IO unsigned long long MTIME;          /* 0x00 Machine Time */
-	__IO unsigned long long MTIMECMP;       /* 0x08 Machine Time Compare */
+    __IO unsigned long long MTIME;          /* 0x00 Machine Time */
+    __IO unsigned long long MTIMECMP;       /* 0x08 Machine Time Compare */
 } PLMT_RegDef;
 
 typedef struct {
-	__I  unsigned int SYSTEMVER;            /* 0x00 SYSTEM ID and Revision Register */
-	     unsigned int RESERVED0[3];         /* 0x04 ~ 0x0C Reserved */
-	__IO unsigned int WRSR;                 /* 0x10 Wakeup and Reset Status Register */
-	__IO unsigned int SMUCR;                /* 0x14 SMU Command Register */
-	     unsigned int RESERVED1[1];         /* 0x18 Reserved */
-	__IO unsigned int WRMASK;               /* 0x1C Wake up Mask Register */
-	__IO unsigned int CER;                  /* 0x20 Clock Enable Register */
-	__IO unsigned int CRR;                  /* 0x24 Clock Ratio Register */
-	     unsigned int RESERVED2[6];         /* 0x28 ~ 0x3C Reserved Register */
-	__IO unsigned int SCRATCH;              /* 0x40 Scratch Register */
-	     unsigned int RESERVED3[3];         /* 0x44 ~ 0x4C Reserved */
-	__IO unsigned int RESET_VECTOR;         /* 0x50 CPU Reset Vector Register */
+    __I  unsigned int SYSTEMVER;            /* 0x00 SYSTEM ID and Revision Register */
+         unsigned int RESERVED0[3];         /* 0x04 ~ 0x0C Reserved */
+    __IO unsigned int WRSR;                 /* 0x10 Wakeup and Reset Status Register */
+    __IO unsigned int SMUCR;                /* 0x14 SMU Command Register */
+         unsigned int RESERVED1[1];         /* 0x18 Reserved */
+    __IO unsigned int WRMASK;               /* 0x1C Wake up Mask Register */
+    __IO unsigned int CER;                  /* 0x20 Clock Enable Register */
+    __IO unsigned int CRR;                  /* 0x24 Clock Ratio Register */
+         unsigned int RESERVED2[6];         /* 0x28 ~ 0x3C Reserved Register */
+    __IO unsigned int SCRATCH;              /* 0x40 Scratch Register */
+         unsigned int RESERVED3[3];         /* 0x44 ~ 0x4C Reserved */
+    __IO unsigned int RESET_VECTOR;         /* 0x50 CPU Reset Vector Register */
 } SMU_RegDef;
 /*****************************************************************************
  * Peripheral device declaration
@@ -76,4 +76,4 @@ typedef struct {
 }
 #endif
 
-#endif	/* __MCU_IP_H__ */
+#endif    /* __MCU_IP_H__ */

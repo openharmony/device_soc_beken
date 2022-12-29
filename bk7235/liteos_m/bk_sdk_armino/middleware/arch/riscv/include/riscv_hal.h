@@ -26,7 +26,7 @@
 #define MTIMERCMP                          (0xE6000008)
 #endif
 
-#define HalIrqDisable(irq_no) 	clear_csr(NDS_MIE, (1<<irq_no))
+#define HalIrqDisable(irq_no)     clear_csr(NDS_MIE, (1<<irq_no))
 #define HalIrqEnable(irq_no)        set_csr(NDS_MIE, (1<<irq_no))
 #define HalSetLocalInterPri(irq_no, irq_pri)    __nds__plic_set_priority(irq_no, irq_pri)
 

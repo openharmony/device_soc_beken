@@ -7,41 +7,41 @@ set(incs
    include/bk_private)
 
 set(srcs
-	boot_handlers_base.S
-	riscv_utility.S
-	stack_base.c
-	trap_base.c
-	arch_interrupt.c
-	reset.c
-	pmp.c
-	initfini.c
-	riscv.c
-	)
+    boot_handlers_base.S
+    riscv_utility.S
+    stack_base.c
+    trap_base.c
+    arch_interrupt.c
+    reset.c
+    pmp.c
+    initfini.c
+    riscv.c
+    )
 
 #if(CONFIG_CACHE_ENABLE)
-	list(APPEND srcs
-		cache.c
-	)
+    list(APPEND srcs
+        cache.c
+    )
 #endif()
 
 if(CONFIG_FREERTOS)
-	list(APPEND incs os/freertos)
-	list(APPEND srcs
-		os/freertos/cpu.c
-		boot_vectors_base.S
-	)
+    list(APPEND incs os/freertos)
+    list(APPEND srcs
+        os/freertos/cpu.c
+        boot_vectors_base.S
+    )
 endif()
 
 if(CONFIG_LITEOS_M_V3)
-	list(APPEND srcs
-		boot_vectors_liteos_m.S
-	)
+    list(APPEND srcs
+        boot_vectors_liteos_m.S
+    )
 endif()
 
 if(CONFIG_LITEOS_M_MST)
-	list(APPEND srcs
-		boot_vectors_liteos_m.S
-	)
+    list(APPEND srcs
+        boot_vectors_liteos_m.S
+    )
 endif()
 
 endif()

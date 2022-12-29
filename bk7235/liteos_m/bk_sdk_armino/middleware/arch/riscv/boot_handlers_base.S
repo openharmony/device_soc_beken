@@ -18,9 +18,9 @@
 .globl boot_reset
 
 boot_reset:
-	//Clear Registers
+    //Clear Registers
 
-	/* start main entry*/
-	call entry_main
-	call .
+    /* start main entry*/
+    call entry_main
+    call .
 

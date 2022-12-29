@@ -17,8 +17,8 @@ import("${board_adapter_dir}/hals/sdk_dir.gni")
 static_library("hal_update_static") {
   sources = [ "hal_hota_board.c" ]
   include_dirs = [
-    "//base/update/ota_lite/hals",
-    "//base/update/ota_lite/interfaces/kits",
+    "//base/update/sys_installer_lite/hals",
+    "//base/update/sys_installer_lite/interfaces/kits",
   ]
   include_dirs += bk_hal_include_dirs
 }

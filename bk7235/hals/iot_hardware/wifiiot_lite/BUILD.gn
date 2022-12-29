@@ -14,22 +14,19 @@ import("//build/lite/ndk/ndk.gni")
 import("${board_adapter_dir}/hals/sdk_dir.gni")
 
 static_library("hal_iothardware") {
-    sources = [
-      "hal_iot_flash.c",
-      "hal_iot_gpio.c",
-      "hal_iot_i2c.c",
-      "hal_iot_pwm.c",
-      "hal_iot_uart.c",
-      "hal_iot_watchdog.c",
-      "hal_lowpower.c",
-      "hal_reset.c",
+  sources = [
+    "hal_iot_flash.c",
+    "hal_iot_gpio.c",
+    "hal_iot_i2c.c",
+    "hal_iot_pwm.c",
+    "hal_iot_uart.c",
+    "hal_iot_watchdog.c",
+    "hal_lowpower.c",
+    "hal_reset.c",
 
-#      "iot_test.c",
-    ]
-    defines = [
-      "CFG_SUPPORT_LITEOS",
-    ]
-  include_dirs = [
+    #      "iot_test.c",
   ]
+  defines = [ "CFG_SUPPORT_LITEOS" ]
+  include_dirs = []
   include_dirs += bk_hal_include_dirs
 }

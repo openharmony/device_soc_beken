@@ -62,51 +62,51 @@
 enum
 {
     ENTRY_PMPADDR0 = 0,
-	ENTRY_PMPADDR1,
-	ENTRY_PMPADDR2,
-	ENTRY_PMPADDR3,
-	ENTRY_PMPADDR4,
-	ENTRY_PMPADDR5,
-	ENTRY_PMPADDR6,
-	ENTRY_PMPADDR7,
-	ENTRY_PMPADDR8,
-	ENTRY_PMPADDR9,
-	ENTRY_PMPADDR10,
-	ENTRY_PMPADDR11,
-	ENTRY_PMPADDR12,
-	ENTRY_PMPADDR13,
-	ENTRY_PMPADDR14,
-	ENTRY_PMPADDR15,
-	ENTRY_PMPADDR_COUNT
+    ENTRY_PMPADDR1,
+    ENTRY_PMPADDR2,
+    ENTRY_PMPADDR3,
+    ENTRY_PMPADDR4,
+    ENTRY_PMPADDR5,
+    ENTRY_PMPADDR6,
+    ENTRY_PMPADDR7,
+    ENTRY_PMPADDR8,
+    ENTRY_PMPADDR9,
+    ENTRY_PMPADDR10,
+    ENTRY_PMPADDR11,
+    ENTRY_PMPADDR12,
+    ENTRY_PMPADDR13,
+    ENTRY_PMPADDR14,
+    ENTRY_PMPADDR15,
+    ENTRY_PMPADDR_COUNT
 };
 
 enum
 {
     ENTRY_PMPCFG0 = 0,
-	ENTRY_PMPCFG1,
-	ENTRY_PMPCFG2,
-	ENTRY_PMPCFG3,
+    ENTRY_PMPCFG1,
+    ENTRY_PMPCFG2,
+    ENTRY_PMPCFG3,
 };
 
 typedef struct {
-	uint8_t pmp_entry;
-	uint8_t pmp_config; 
-	/*
-	    union 
-	    { 
-	        struct 
-	        { 
-	           volatile uint8_t  R               : 1;  //[0], Read Access Control
-	           volatile uint8_t  W               : 1;  //[1], Write Access Control
-	           volatile uint8_t  X               : 1;  //[2], Instruction execution Control
-	           volatile uint8_t  A               : 2;  //[4:3], Address matching mode
-	           volatile uint8_t  reserved        : 2;  //[6:5],
-	           volatile uint8_t  L               : 1;  //[7], Write Lock and permission enforcement bit for Machine mode
-	        }; 
-	        uint8_t value; 
-	    }pmp_config;
+    uint8_t pmp_entry;
+    uint8_t pmp_config; 
+    /*
+        union 
+        { 
+            struct 
+            { 
+               volatile uint8_t  R               : 1;  //[0], Read Access Control
+               volatile uint8_t  W               : 1;  //[1], Write Access Control
+               volatile uint8_t  X               : 1;  //[2], Instruction execution Control
+               volatile uint8_t  A               : 2;  //[4:3], Address matching mode
+               volatile uint8_t  reserved        : 2;  //[6:5],
+               volatile uint8_t  L               : 1;  //[7], Write Lock and permission enforcement bit for Machine mode
+            }; 
+            uint8_t value; 
+        }pmp_config;
     */
-	void *pmp_addr;
+    void *pmp_addr;
 } pmp_config_t;
 
 #endif // __PMP_H__

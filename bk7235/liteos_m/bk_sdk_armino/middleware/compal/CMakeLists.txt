@@ -2,8 +2,8 @@
 
 set(incs homekit matter)
 set(srcs 
-	homekit/key_value.c
-	homekit/func_convert.c
+	#homekit/key_value.c
+	#homekit/func_convert.c
 	)
 
 if(CONFIG_SUPPORT_MATTER)
