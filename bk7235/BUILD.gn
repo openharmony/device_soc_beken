@@ -14,10 +14,41 @@
 if (ohos_kernel_type == "liteos_m") {
   import("//build/lite/config/component/lite_component.gni")
   import("//build/lite/config/subsystem/lite_subsystem.gni")
+  import("//kernel/liteos_m/config.gni")
   import("//kernel/liteos_m/liteos.gni")
+
   module_name = get_path_info(rebase_path("."), "name")
   module_group(module_name) {
     modules = [ "liteos_m" ]
-#    deps = [ "src:bk_liteos_adapter" ]
+    deps = [
+      ":copy_libs",
+      ":encrypt",
+    ]
+  }
+
+  copy("copy_libs") {
+    sources = [
+      "liteos_m/bk_sdk_armino/components/bk_libs/bk7235_openharmony/libs/libbt.a",
+      "liteos_m/bk_sdk_armino/components/bk_libs/bk7235_openharmony/libs/libwifi.a",
+    ]
+    outputs = [ "$root_build_dir/libs/{{source_file_part}}" ]
+  }
+
+  copy("encrypt") {
+    sources = [ "${device_path}/encrypt" ]
+    outputs = [ "$root_build_dir/encrypt" ]
+  }
+
+  build_ext_component("build_7235_sdk") {
+    exec_path = rebase_path("${root_out_dir}")
+    ENCRYPT_FLAG = "0 0 0 0"
+    command = "rm -rf ${exec_path}/build"
+    command += "&& mkdir -p ${exec_path}/build"
+    command += "&& ${exec_path}/encrypt ${exec_path}/${liteos_name}.bin ${ENCRYPT_FLAG}"
+    command += "&& mv ${exec_path}/${liteos_name}_crc.bin ${exec_path}/build/all_2M.1220.bin"
+    deps = [
+      "${device_path}:bk_sdk",
+      "//kernel/liteos_m:build_kernel_image",
+    ]
   }
 }

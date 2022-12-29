@@ -19,11 +19,8 @@ static_library("wifiservice") {
     "source/wifi_device_util.c",
     "source/wifi_hotspot.c",
   ]
-  defines = [
-    "CFG_SUPPORT_LITEOS",
-  ]
-  include_dirs = [
-  ]
+  defines = [ "CFG_SUPPORT_LITEOS" ]
+  include_dirs = []
   include_dirs += bk_hal_include_dirs
 }
 

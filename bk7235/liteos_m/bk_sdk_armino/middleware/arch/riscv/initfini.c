@@ -15,7 +15,7 @@
 
 #include <sys/types.h>
 
-#define USE_LIBC_INITFINI		0
+#define USE_LIBC_INITFINI        0
 
 #if USE_LIBC_INITFINI
 
@@ -52,16 +52,16 @@ extern void (*__init_array_end []) (void) __attribute__((weak));
 //void __libc_init_array (void) __attribute__((no_profile_instrument_function));
 void __libc_init_array (void)
 {
-	size_t count;
-	size_t i;
+    size_t count;
+    size_t i;
 
-	count = __preinit_array_end - __preinit_array_start;
-	for (i = 0; i < count; i++)
-		__preinit_array_start[i] ();
+    count = __preinit_array_end - __preinit_array_start;
+    for (i = 0; i < count; i++)
+        __preinit_array_start[i] ();
 
-	count = __init_array_end - __init_array_start;
-	for (i = 0; i < count; i++)
-		__init_array_start[i] ();
+    count = __init_array_end - __init_array_start;
+    for (i = 0; i < count; i++)
+        __init_array_start[i] ();
 }
 
 extern void (*__fini_array_start []) (void) __attribute__((weak));
@@ -71,12 +71,12 @@ extern void (*__fini_array_end []) (void) __attribute__((weak));
 void __libc_fini_array (void) __attribute__((no_profile_instrument_function));
 void __libc_fini_array (void)
 {
-	size_t count;
-	size_t i;
+    size_t count;
+    size_t i;
 
-	count = __fini_array_end - __fini_array_start;
-	for (i = count; i > 0; i--)
-		__fini_array_start[i-1] ();
+    count = __fini_array_end - __fini_array_start;
+    for (i = count; i > 0; i--)
+        __fini_array_start[i-1] ();
 }
 
 #endif

@@ -17,14 +17,13 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <sys/times.h>
-#include <sys/unistd.h>
+//#include <sys/unistd.h>
 
 
 #include <os/mem.h>
 
 #include <os/os.h>
 #include "common/bk_assert.h"
-
 
 /************** wrap C library functions **************/
 void *__wrap_malloc(size_t size)
