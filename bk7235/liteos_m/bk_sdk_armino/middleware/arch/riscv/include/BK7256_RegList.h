@@ -33,11 +33,11 @@
 #define addSYSTEM_Reg0x1                                        *((volatile unsigned long *) (0x44010000+0x1*4))
 
 
-#define BASEADDR_PWM0											0x44840000
+#define BASEADDR_PWM0                                            0x44840000
 
-#define BASEADDR_PWM1											0x44840040
+#define BASEADDR_PWM1                                            0x44840040
 
-#define BASEADDR_PWM2											0x44840080
+#define BASEADDR_PWM2                                            0x44840080
 
 //addSYSTEM_Reg0x2
 #define addSYSTEM_Reg0x2                                        *((volatile unsigned long *) (0x44010000+0x2*4))

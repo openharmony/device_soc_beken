@@ -32,49 +32,49 @@ extern int print_str(char * st);
 
 void close_wdt(void)
 {
-	/*close the wdt*/
-	*((volatile unsigned long *) (0x44000600)) = 0x5A0000;
-	*((volatile unsigned long *) (0x44000600)) = 0xA50000;
-	*((volatile unsigned long *) (0x44800000)) = 0x5A0000;
-	*((volatile unsigned long *) (0x44800000)) = 0xA50000;
+    /*close the wdt*/
+    *((volatile unsigned long *) (0x44000600)) = 0x5A0000;
+    *((volatile unsigned long *) (0x44000600)) = 0xA50000;
+    *((volatile unsigned long *) (0x44800000)) = 0x5A0000;
+    *((volatile unsigned long *) (0x44800000)) = 0xA50000;
 }
 //volatile int g_debug_mode=1;
 void reset_handler(void)
 {
     /// TODO: DEBUG VERSION close the wdt
-	close_wdt();
+    close_wdt();
 
-	//while(g_test_mode);
+    //while(g_test_mode);
 
 #if (!CONFIG_SLAVE_CORE)
-	sram_dcache_map();
+    sram_dcache_map();
 #endif
 
-	/*
-	 * Initialize LMA/VMA sections.
-	 * Relocation for any sections that need to be copied from LMA to VMA.
-	 */
-	c_startup();
+    /*
+     * Initialize LMA/VMA sections.
+     * Relocation for any sections that need to be copied from LMA to VMA.
+     */
+    c_startup();
 
-	/*power manager init*/
-	pm_hardware_init();
+    /*power manager init*/
+    pm_hardware_init();
 
 #if (CONFIG_SOC_BK7256XX)
-	//clear mannully reboot flag
-	set_reboot_tag(0);
+    //clear mannully reboot flag
+    set_reboot_tag(0);
 #endif
 
-	/* Call platform specific hardware initialization */
-	system_init();
+    /* Call platform specific hardware initialization */
+    system_init();
     //while(g_debug_mode){};
 
-	/* Do global constructors */
-	__libc_init_array();
+    /* Do global constructors */
+    __libc_init_array();
 
-	/*Init pmp configuration*/
-	init_pmp_config();
-	
-	/* Entry function */
-	entry_main();
+    /*Init pmp configuration*/
+    init_pmp_config();
+    
+    /* Entry function */
+    entry_main();
 
 }

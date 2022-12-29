@@ -57,7 +57,7 @@ arch_enable_irq:
  */
 arch_int_lock:
     csrr    a0, mstatus           // return value
-	csrci	mstatus, MSTATUS_MIE
+    csrci    mstatus, MSTATUS_MIE
     ret
 
 /*
@@ -65,7 +65,7 @@ arch_int_lock:
  */
 arch_int_unlock:
     csrr    a0, mstatus           // return value
-	csrsi  mstatus, MSTATUS_MIE
+    csrsi  mstatus, MSTATUS_MIE
     ret
 
 /*
@@ -87,27 +87,27 @@ arch_get_int_status:
  * void arch_fence(void);
  */
 arch_fence:
-	fence iorw, iorw
-	ret
+    fence iorw, iorw
+    ret
 
 #if 0
 /*
  * void arch_atomic_clear(u32 * lock_addr);
  */
 arch_atomic_clear:
-	amoswap.w.rl x0, x0, (a0)
-	ret
+    amoswap.w.rl x0, x0, (a0)
+    ret
 
 /*
  * u32 arch_atomic_set(u32 * lock_addr);
  */
 arch_atomic_set:
-	addi t0, x0, 1
+    addi t0, x0, 1
 //swap_again: 
-	amoswap.w.aq t0, t0, (a0)
-	c.mv  a0, t0
-//	bnez t0, swap_again
-	ret
+    amoswap.w.aq t0, t0, (a0)
+    c.mv  a0, t0
+//    bnez t0, swap_again
+    ret
 
 #endif
 
@@ -115,45 +115,45 @@ arch_atomic_set:
  * u64 riscv_get_mtimer(void);
  */
 riscv_get_mtimer:
-	li t0, MTIMER
+    li t0, MTIMER
 read_mtimer: 
-	lw a1, 4(t0)
-	lw a0, 0(t0)
-	lw t1, 4(t0)
-	bne a1, t1, read_mtimer
-	ret
+    lw a1, 4(t0)
+    lw a0, 0(t0)
+    lw t1, 4(t0)
+    bne a1, t1, read_mtimer
+    ret
 
 /*
  * void riscv_set_mtimercmp(u64 new_time);
  */
 riscv_set_mtimercmp:
-	li t0, MTIMERCMP
-	li t1, -1
-	sw t1, 4(t0)
-	fence
-	sw a0, 0(t0)
-	sw a1, 4(t0)
-	ret
+    li t0, MTIMERCMP
+    li t1, -1
+    sw t1, 4(t0)
+    fence
+    sw a0, 0(t0)
+    sw a1, 4(t0)
+    ret
 
 /*
  * u64 riscv_get_cycle(void);
  */
 riscv_get_cycle:
 read_cycle: 
-	csrrs a1, mcycleh, x0
-	csrrs a0, mcycle, x0
-	csrrs t0, mcycleh, x0
-	bne a1, t0, read_cycle
-	ret
+    csrrs a1, mcycleh, x0
+    csrrs a0, mcycle, x0
+    csrrs t0, mcycleh, x0
+    bne a1, t0, read_cycle
+    ret
 
 /*
  * u64 riscv_get_instruct_cnt(void);
  */
 riscv_get_instruct_cnt:
 read_instr_cnt: 
-	csrrs a1, minstreth, x0
-	csrrs a0, minstret, x0
-	csrrs t0, minstreth, x0
-	bne a1, t0, read_instr_cnt
-	ret
+    csrrs a1, minstreth, x0
+    csrrs a0, minstret, x0
+    csrrs t0, minstreth, x0
+    bne a1, t0, read_instr_cnt
+    ret
 

@@ -25,10 +25,16 @@
                 <policyitem type="copyright" name="Huawei" path=".*" desc="beken use Huawei copyright"/>
                 <policyitem type="copyright" name="BEKEN" path=".*" desc="use beken copyright"/>
                 <policyitem type="copyright" name="Beken" path=".*" desc="use beken copyright"/>		
+                <policyitem type="copyright" name="Swedish" path=".*" desc="use swedish copyright"/>		
+                <policyitem type="copyright" name="Amazon" path=".*" desc="use Amazon copyright"/>		
+                <policyitem type="copyright" name="Valentin" path=".*" desc="use Valentin copyright"/>		
+                <policyitem type="copyright" name="Holger Weiss" path=".*" desc="use Holger Weiss copyright"/>	
+                <policyitem type="copyright" name="Patrick Powell" path=".*" desc="use Patrick Powell copyright"/>	
+                <policyitem type="copyright" name="Armink" path=".*" desc="use Armink copyright"/>	
                 <policyitem type="license" name="Apache" path=".*" desc="beken use apache 2.0 license"/>
                 <policyitem type="license" name="BSD-3-Clause" path=".*" desc="beken use BSD-3-Clause license"/>
                 <policyitem type="license" name="MIT" path=".*" desc="beken use MIT license"/>
-            </policy>
+			</policy>
         </policylist>
         <filefilterlist>
             <filefilter name="defaultFilter" desc="beken using MIT files, but invalid copyright">
@@ -40,6 +46,16 @@
             </filefilter>
 			
 			<filefilter name="defaultFilter" desc="not use copyright">
+                <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/middleware/driver/uart/printf.c" desc="not use copyright"/>
+                <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/components/easy_flash/inc/easyflash.h" desc="not use copyright"/>
+                <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/components/easy_flash/port/ef_cfg.h" desc="not use copyright"/>
+                <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/components/easy_flash/port/ef_port.c" desc="not use copyright"/>
+                <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/components/easy_flash/src/easyflash.c" desc="not use copyright"/>
+                <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/components/easy_flash/src/ef_env.c" desc="not use copyright"/>
+                <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/components/easy_flash/src/ef_env_wl.c" desc="not use copyright"/>
+                <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/components/easy_flash/src/ef_iap.c" desc="not use copyright"/>
+                <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/components/easy_flash/src/ef_log.c" desc="not use copyright"/>
+                <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/components/easy_flash/src/ef_utils.c" desc="not use copyright"/>
                 <filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/middleware/soc/bk7235/bk7235_bsp.sag" desc="not use copyright"/>
 				<filteritem type="filepath" name="bk7235/liteos_m/bk_sdk_armino/middleware/soc/common/dualcore_cpu1.sag" desc="not use copyright"/>
 				<filteritem type="filepath" name="Kconfig.liteos_m.defconfig" desc="not use copyright"/>

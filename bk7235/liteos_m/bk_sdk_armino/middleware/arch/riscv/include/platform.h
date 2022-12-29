@@ -44,4 +44,4 @@ extern "C" {
 }
 #endif
 
-#endif	/* __PLATFORM_H__ */
+#endif    /* __PLATFORM_H__ */

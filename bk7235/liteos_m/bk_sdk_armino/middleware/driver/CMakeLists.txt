@@ -65,7 +65,7 @@ set(srcs
 	saradc/adc_statis.c
 	security/security.c
 	security/hal_aes.c
-	security/hal_sha.c
+	#security/hal_sha.c
 	spinlock/amp_res_lock.c
 	)
 if (CONFIG_AON_WDT)
@@ -360,7 +360,7 @@ if (NOT CONFIG_FULLY_HOSTED)
 		)
 
 	list(APPEND srcs
-		"dsp/dsp.c"
+		#"dsp/dsp.c"
 		)
 
 if (CONFIG_SOC_BK7271)
@@ -372,7 +372,7 @@ endif() #if (NOT CONFIG_FULLY_HOSTED)
 
 if (CONFIG_SOC_BK7256XX)
 	list(APPEND srcs
-		"bk7256/mailbox_driver.c"
+		#"bk7256/mailbox_driver.c"
 		)
 
 endif()
