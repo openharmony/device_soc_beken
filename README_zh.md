@@ -31,13 +31,6 @@ device_soc_beken/
 ```
 
 ## 编译环境搭建
-
-* 安装必要的库和工具
-
-```
-	sudo apt-get install build-essential gcc g++ make zlib* libffi-dev e2fsprogs pkg-config flex bison perl bc openssl libssl-dev libelf-dev libc6-dev binutils binutils-dev libdwarf-dev u-boot-tools mtd-utils gcc-arm-linux-gnueabi cpio device-tree-compiler git git-lfs ruby ccache
-```
-
 * 安装python3
 
 ```
@@ -52,14 +45,20 @@ device_soc_beken/
 	1.python3 -m pip install --user ohos-build
 	2.安装固定hb版本
 	pip3 install ohos-build==0.4.6
+	3.设置环境变量
+	echo 'export PATH=~/.local/bin:$PATH' | tee -a ~/.bashrc
+	source ~/.bashrc
 ```
 
-* 安装risc-v
+* 安装 [toolchain_v5.1.1.tgz](http://dl.bekencorp.com/tools/toolchain/toolchain_v5.1.1.tgz)
 
 ```
-	1.解压risc-v.tar.bz2
+	1.解压缩
+	tar xvf toolchain_v5.1.1.tgz -C
 	2.设置环境变量
-	export PATH=/opt/risc-v/nds32le-elf-mculib-v5/bin:$PATH
+	echo 'export PATH=/opt/risc-v/nds32le-elf-mculib-v5f/bin:$PATH' | tee -a ~/.bashrc
+	source ~/.bashrc
+
 ```
 
 ## 编译流程
