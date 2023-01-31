@@ -18,6 +18,23 @@
 
 #define RISCV_PLIC_VECTOR_CNT   (63)
 #define RISCV_SYS_MAX_IRQ          (0)
+
+#define F_LREG flw
+#define F_SREG fsw
+
+#define FREGBYTES 4
+
+#ifndef REGBYTES
+#define REGBYTES 4
+#endif
+
+#ifdef __riscv_flen
+#define FPU_CONTEXT_SIZE            (2 + 32 * (FREGBYTES / REGBYTES)) /* (ucode,fcsr,f0~f31) */
+#else
+#define FPU_CONTEXT_SIZE            (2)
+#endif
+
+
 #ifndef MTIMER
 #define MTIMER        0xE6000000
 #endif
