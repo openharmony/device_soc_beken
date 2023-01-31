@@ -31,6 +31,7 @@
 
 #ifndef _BK_LOS_EXC_S
 #define _BK_LOS_EXC_S
+#include "soc.h"
 #include "soc_common.h"
 
 .macro PUSH_CALLER_REG

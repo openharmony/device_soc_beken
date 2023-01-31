@@ -15,5 +15,9 @@ import("//kernel/liteos_m/liteos.gni")
 
 module_name = "arch_adapter"
 kernel_module(module_name) {
-  sources = [ "los_exc.S" ]
+  sources = [
+    "los_context.c",
+    "los_dispatch.S",
+    "los_exc.S",
+  ]
 }
