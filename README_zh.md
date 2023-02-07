@@ -56,7 +56,7 @@ device_soc_beken/
 	1.解压缩
 	tar xvf toolchain_v5.1.1.tgz -C
 	2.设置环境变量
-	echo 'export PATH=/opt/risc-v/nds32le-elf-mculib-v5/bin:$PATH' | tee -a ~/.bashrc
+	echo 'export PATH=/opt/risc-v/nds32le-elf-mculib-v5f/bin:$PATH' | tee -a ~/.bashrc
 	source ~/.bashrc
 
 ```
