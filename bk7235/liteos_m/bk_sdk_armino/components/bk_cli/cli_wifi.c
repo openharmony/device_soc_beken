@@ -548,13 +548,13 @@ void cli_wifi_sta_cmd(char *pcWriteBuffer, int xWriteBufferLen, int argc, char *
 void cli_wifi_sta_eap_cmd(char *pcWriteBuffer, int xWriteBufferLen, int argc, char **argv)
 {
 	char *ssid = NULL;
-	char *ca = "cacert.pem";
-	char *client_cert = "beken-iot-1.pem";
-	char *private_key = "beken-iot-1.key";
-	char *private_key_passwd = "12345678";
-	char *identity = "user";
+	char *ca = argv[3];
+	char *client_cert = argv[5];
+	char *private_key = argv[6];
+	char *private_key_passwd = argv[2];
+	char *identity = argv[4];
 
-	if ((argc < 2) || (argc > 5)) {
+	if ((argc < 2) || (argc > 7)) {
 		CLI_LOGI("invalid argc number\n");
 		return;
 	}
@@ -1109,7 +1109,7 @@ static const struct cli_command s_wifi_commands[] = {
 	{"ap", "ap ssid [password] [channel[1:14]]", cli_wifi_ap_cmd},
 	{"sta", "sta ssid [password][bssid][channel]", cli_wifi_sta_cmd}, //TODO support connect speicific BSSID
 #if CONFIG_COMPONENTS_WPA2_ENTERPRISE
-	{"sta_eap", "sta_eap ssid password [identity] [client_cert] [private_key]", cli_wifi_sta_eap_cmd},
+	{"sta_eap", "sta_eap ssid password [ca] [identity] [client_cert] [private_key]", cli_wifi_sta_eap_cmd},
 #endif
 	{"stop", "stop {sta|ap}", cli_wifi_stop_cmd},
 	{"set_interval", "set listen interval}", cli_wifi_set_interval_cmd},
