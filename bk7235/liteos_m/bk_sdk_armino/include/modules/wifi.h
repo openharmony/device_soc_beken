@@ -117,7 +117,6 @@ bk_err_t bk_wifi_scan_stop(void);
  *
  * Usage example:
  *
- *     wifi_sta_config_t sta_config = WIFI_DEFAULT_STA_CONFIG();
  *
  *     os_strncpy(sta_config.ssid, "ssid", WIFI_SSID_STR_LEN);
  *     os_strncpy(sta_config.password, "password");

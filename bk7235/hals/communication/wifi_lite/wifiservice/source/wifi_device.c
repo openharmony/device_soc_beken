@@ -551,7 +551,7 @@ WifiErrorCode ConnectTo(int networkId)
 {
 	int chan = 0;
 	int ret=0;
-	wifi_sta_config_t sta_config = WIFI_DEFAULT_STA_CONFIG();
+	wifi_sta_config_t sta_config;
 	if (networkId >= WIFI_MAX_CONFIG_SIZE || networkId < 0) 
 	{
        	return ERROR_WIFI_INVALID_ARGS;

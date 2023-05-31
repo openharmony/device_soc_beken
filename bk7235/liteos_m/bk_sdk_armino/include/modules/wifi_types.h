@@ -67,18 +67,6 @@ extern "C" {
 	}
 
 /**
- * @brief default STA configuration
- * */
-#define WIFI_DEFAULT_STA_CONFIG() {\
-	.ssid = "sta_default_ssid",\
-	.bssid = {0},\
-	.channel = 0,\
-	.security = WIFI_SECURITY_AUTO,\
-	.password = "12345678",\
-	.reserved = {0},\
-	}
-
-/**
  * @brief default AP configuration
  * */
 #define WIFI_DEFAULT_AP_CONFIG() {\
