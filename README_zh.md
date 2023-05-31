@@ -42,15 +42,16 @@ device_soc_beken/
 * 安装hb
 
 ```
-	1.python3 -m pip install --user ohos-build
-	2.安装固定hb版本
-	pip3 install ohos-build==0.4.6
+	1.删除旧版本
+	python -m pip uninstall ohos-build
+	2.安装hb1.0.0版本
+	python -m pip install --user build/hb
 	3.设置环境变量
 	echo 'export PATH=~/.local/bin:$PATH' | tee -a ~/.bashrc
 	source ~/.bashrc
 ```
 
-* 安装 [toolchain_v5.1.1.tgz](http://dl.bekencorp.com/tools/toolchain/toolchain_v5.1.1.tgz)
+* 安装 [toolchain_v5.1.1.tgz](http://dl.bekencorp.com/tools/toolchain/riscv/toolchain_v5.1.1.tgz)
 
 ```
 	1.解压缩
@@ -71,6 +72,14 @@ device_soc_beken/
 使用键盘方向键进行板卡demo选择：
 
 ```
+	OHOS Which os_level do you need?  (Use arrow keys)
+		> mini
+		> small
+		> standard
+```
+选择mini
+
+```
 	beken
  		> wifi_bk7235
  		> xts_demo
@@ -80,7 +89,8 @@ device_soc_beken/
 2. 编译
 	
 ```
- 	hb build -f
+	rm -rf out/
+ 	hb build -f  --gn-args build_xts=true
 ```
 编译成功界面：
 ```
